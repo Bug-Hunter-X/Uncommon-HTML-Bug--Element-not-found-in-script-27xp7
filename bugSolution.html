@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text will be replaced.
+  </div>
+
+  <script>
+    // Correct way to ensure the element exists before accessing it. Waits for the DOMContentLoaded event
+    document.addEventListener('DOMContentLoaded', function() {
+        const myDiv = document.getElementById('myDiv');
+        if (myDiv) {
+          myDiv.textContent = "Text replaced!";
+        } else {
+          console.error("Element not found");
+        }
+    });
+  </script>
+</body>
+</html>
