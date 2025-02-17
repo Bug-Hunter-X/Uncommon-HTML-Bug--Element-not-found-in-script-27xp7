@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text will be replaced.
+  </div>
+
+  <script>
+    // Incorrect way to get the element. It will return null if the element is not found immediately.
+    const myDiv = document.getElementById('myDiv');
+    if (myDiv) {
+      myDiv.textContent = "Text replaced!";
+    } else {
+      console.error("Element not found");
+    }
+  </script>
+</body>
+</html>
